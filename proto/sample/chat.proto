@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc.Sample";
+
+package sample;
+
+service Chat {
+  rpc Talk(stream ChatMessage) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string message = 1;
+}
